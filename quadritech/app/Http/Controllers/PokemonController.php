@@ -53,7 +53,6 @@ class PokemonController extends Controller
             'pokemons'=>$pokemons
             ]
         );
-            
     }
 
     /**
