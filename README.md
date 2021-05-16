@@ -17,13 +17,13 @@ Para o desenvolvimento da aplicação foram utilizadas as seguintes tecnologias 
 * Composer versão 2.0.12.
 # Ambientes Desenvolvimento – Produção
 Pode ser utilizado repositórios e versionamentos no GitHub com a aplicação Jekins para realização de deploys entre os ambientes da seguinte maneira:
-* Ambiente de desenvolvimento: Computador local de cada desenvolvedor e um ambiente de dev para os desenvolvedores testarem, o mesmo será uma réplica do ambiente de produção.
-* Ambiente de Homologação: Réplica do ambiente de produção, após os desenvolvedores finalizarem 100% os desenvolvimentos e correções de erros, pode ser feito o deploy para o ambiente de homologação e gerar uma nova versão para os próximos desenvolvimentos e correções.
-* Ambiente de produção:  Após realizar todos os testes necessários e confirmar 100% que está tudo correto, realizar o deploy para o ambiente de produção, assim será liberado para o cliente.
+* <b>Ambiente de desenvolvimento:</b> Computador local de cada desenvolvedor e um ambiente de dev para os desenvolvedores testarem, o mesmo será uma réplica do ambiente de produção.
+* <b>Ambiente de Homologação:</b> Réplica do ambiente de produção, após os desenvolvedores finalizarem 100% os desenvolvimentos e correções de erros, pode ser feito o deploy para o ambiente de homologação e gerar uma nova versão para os próximos desenvolvimentos e correções.
+* <b>Ambiente de produção:</b>  Após realizar todos os testes necessários e confirmar 100% que está tudo correto, realizar o deploy para o ambiente de produção, assim será liberado para o cliente.
 # Rodar a aplicação
 Para rodar a aplicação o ambiente/máquina deverá ter instalado as seguintes aplicações:
 * PHP 7.2.x instalado e configurado nas variáveis de ambiente do sistema.
-OBS: Pode ser instalado através de aplicações com ambientes prontos como Xampp ou Wampp.
+<br><b>OBS:</b> Pode ser instalado através de aplicações com ambientes prontos como Xampp ou Wampp.
 * Composer: Para rodar o servidor Artisan.
 Deverá seguir os seguintes passos:
 * Sincronizar o repositório git do projeto em qualquer pasta;
