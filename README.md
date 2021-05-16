@@ -1,4 +1,4 @@
-# teste_quadritech
+# Aplicação de teste Quadritech
 Teste de nível técnico do Lenon Platenetti de Melo
 
 # Objetivo
