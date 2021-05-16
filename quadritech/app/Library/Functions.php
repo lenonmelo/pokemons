@@ -1,7 +1,7 @@
 <?php
 /**
-     * Classe de funções gerais
-     */
+ * Classe de funções gerais
+ */
 namespace App\Library;
 
 use GuzzleHttp\Client;
@@ -10,7 +10,7 @@ use Illuminate\Pagination\Paginator;
 class Functions{
 
     /**
-     * Retorna o ID do pokemon encontrado na URL.
+     * Retorna o ID do pokémon encontrado na URL.
      *
      * @param $pokemon objeto pokemon
      * @return Int

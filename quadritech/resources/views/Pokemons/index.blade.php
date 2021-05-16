@@ -33,16 +33,16 @@
 @section('js')
     <script>
     /*
-     * Function que mostra o pokemon
+     * Function que mostra o pokémon
     */
     function mostrarPokemon(id){
-        //Inlui o loading no modal
+        //Inclui o loading no modal
         $( "#conteudo" ).html('<div class="d-flex justify-content-center m-5"><span class="m-2">Carregando...</span><div class="spinner-border m-2" role="status"></div></div>');
         
         //Abre o modal
         $("#myModal").modal('show');
 
-        //Carrega o conteudo e incluir o mesmo no modal com o perfil do pokemon
+        //Carrega o conteúdo e inclui o mesmo no modal com o perfil do pokémon
         $.ajax({
             url: "{{ Route('pokemons.show') }}?id="+id
         }).done(function( html ) {

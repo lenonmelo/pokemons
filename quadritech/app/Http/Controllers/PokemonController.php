@@ -10,13 +10,13 @@ use App\Support\Collection;
 class PokemonController extends Controller
 {
      /**
-     * Mostra a lista de pokemons.
+     * Mostra a lista de pokémons.
      *
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
     {
-        //Captirua a pagina passada para mostra na tela
+        //Captura a página passada para mostrar na tela
         $page = (int)$request->input('page');
 
         //Url principal da API
@@ -37,13 +37,13 @@ class PokemonController extends Controller
         //Cria um objeto de funções padrões 
         $funtions = new Functions();
 
-        //Realiza a busca e seta o id dos pokemons
+        //Realiza a busca e seta o id dos pokémons
         foreach($pokemons->results as $i_pokemon => $pokemon){
             //Captura o id atraves da URL de cada pokemon
             $pokemons->results[$i_pokemon]->id =  $funtions->idUrl($pokemon);
         }
 
-        //Incluindo o total de resultados para serem paginados via Paginate collection
+        //Inclui o total de resultados para serem paginados via Paginate collection
         $pokemons = (new Collection($pokemons->results))->paginate(10, null, $page);
 
         //Seta o paginator para usar o estilo bootstrap-4
@@ -57,15 +57,15 @@ class PokemonController extends Controller
     }
 
     /**
-     * Mostra as informações de um pokemons escolhido.
-     * Recebe um request com o id do pokemon
+     * Mostra as informações de um pokémon escolhido.
+     * Recebe um request com o id do pokémon
      * 
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function show(Request $request)  
     {
-        //Captura id do pokemon
+        //Captura id do pokémon
         $id = $request->input('id');
 
         //Url principal da API
@@ -83,12 +83,12 @@ class PokemonController extends Controller
         //Pega os valores da API e converte em um objeto de arrays
         $pokemon = json_decode($requeste->getBody()->getContents());
         
-        //Buscar as habilidades do pokemon em um array
+        //Busca as habilidades do pokémon em um array
         $array_ability = array();
         foreach($pokemon->abilities as $ability)
             $array_ability[] = ucfirst($ability->ability->name);
 
-        //Monta um array com as caractersiticas e nome do pokemon para passar para a view
+        //Monta um array com as características e nome do pokémon para passar para a view
         $array_pokemon = [
             'name'=>ucfirst($pokemon->name),
             'abilities'=>implode(' - ', $array_ability),
