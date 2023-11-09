@@ -10,6 +10,11 @@ use Illuminate\Http\Request;
 
 class PokemonController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
      /**
      * Mostra a lista de pokémons.
      *
