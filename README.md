@@ -1,7 +1,7 @@
-# Teste de nível técnico do Lenon Platenetti de Melo
+# Projeto do Lenon Platenetti de Melo
 
 # Objetivo
-Aplicação de teste desenvolvida para a finalidade de medir o nível de conhecimento técnico do candidato Lenon Platenetti de Melo.
+Realizar a busca e visualização de pokemons utilizando as APIs do site http://pokeapi.co.
 
 # Desenvolvimento
 Para o desenvolvimento da aplicação foram utilizadas as seguintes tecnologias web.

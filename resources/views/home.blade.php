@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Gestor de veículos')
+@section('title', 'Pokemons')
 
 @section('content_header')
     <h1>Seja bem-vindo ao sistema Pokemons</h1>
