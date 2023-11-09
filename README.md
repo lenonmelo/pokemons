@@ -1,37 +1,69 @@
-# Aplicação de teste Quadritech
-Teste de nível técnico do Lenon Platenetti de Melo
+# Teste de nível técnico do Lenon Platenetti de Melo
 
 # Objetivo
 Aplicação de teste desenvolvida para a finalidade de medir o nível de conhecimento técnico do candidato Lenon Platenetti de Melo.
+
 # Desenvolvimento
 Para o desenvolvimento da aplicação foram utilizadas as seguintes tecnologias web.
-* PHP versão 7.4.16;
-* Framework Laravel versão 8.41.0;
-* Acesso as APIs via biblioteca GuzzleHttp;
+* PHP versão 8.0.28;
+* Framework Laravel versão 9.19;
 * Framework de estilo CSS Bootstrap versão 4.4.1;
-* Estrutura visual com o plugin AdminLTE versão 3.0.5;
-* Interação de tela utilizando Javascript com a biblioteca jQuery versão 3.4.1;
-* Foram utilizadas as seguintes APIs para listar e mostrar valores.
-  * Lista de Pokémons: http://pokeapi.co/api/v2/pokemon/
-  * Visualização de cada Pokémon: http://pokeapi.co/api/v2/pokemon/:idDoPokemon/
-* Composer versão 2.0.12.
-# Ambientes Desenvolvimento – Produção
-Pode ser utilizado repositórios e versionamentos no GitHub com a aplicação Jekins para realização de deploys entre os ambientes da seguinte maneira:
-* <b>Ambiente de desenvolvimento:</b> Computador local de cada desenvolvedor e um ambiente de dev para os desenvolvedores testarem, o mesmo será uma réplica do ambiente de produção.
-* <b>Ambiente de Homologação:</b> Réplica do ambiente de produção, após os desenvolvedores finalizarem 100% os desenvolvimentos e correções de erros, pode ser feito o deploy para o ambiente de homologação e gerar uma nova versão para os próximos desenvolvimentos e correções.
-* <b>Ambiente de produção:</b>  Após realizar todos os testes necessários e confirmar 100% que está tudo correto, realizar o deploy para o ambiente de produção, assim será liberado para o cliente.
+* Estrutura visual com o plugin AdminLTE versão 3.9;
+* Interação de tela utilizando Javascript com a biblioteca jQuery versão 3.6.0;
+* Composer versão 2.5.4;
+* Banco Mysql versão 15.1
+
 # Rodar a aplicação
-Para rodar a aplicação o ambiente/máquina deverá ter instalado as seguintes aplicações:
-* PHP 7.2.x instalado e configurado nas variáveis de ambiente do sistema.
-<br><b>OBS:</b> Pode ser instalado através de aplicações com ambientes prontos como Xampp ou Wampp.
-* Composer: Para rodar o servidor Artisan.
-Deverá seguir os seguintes passos:
-* Sincronizar o repositório git do projeto em qualquer pasta;
-* Acessar via terminal a pasta \quadritech existente no projeto e rodar o servidor artisan dentro dessa pasta pelo comando:
+Para executar a aplicação, é necessário que o ambiente/máquina tenha as seguintes aplicações instaladas e configuradas:
+* PHP 8.0.x, instalado e configurado nas variáveis de ambiente do sistema;
+<br><b>OBS:</b> Você pode instalá-lo por meio de aplicações com ambientes prontos, como Xampp ou Wampp.
+* Composer: Será utilizado para a instalação dos pacotes necessários.
+* Artisan: Será utilizado para iniciar o servidor de teste.
+* MySQL 15.X ou Maria DB.
+  
+Após concluir as instalações necessárias, siga estas etapas:
+* Clonar o projeto na pasta que pretende executar o sistema;
+* Acesse a pasta principal do sistema através do terminal.
+* Execute o seguinte comando para instalar os pacotes necessários;
 
-    <code>php artisan serve</code>
-    
-* Acessar no navegador o endereço local do servidor mostrado no terminal.
+      php composer install
 
-  <code> http://127.0.0.1:8000/ </code>
+* Faça uma cópia do arquivo ".env.example" encontrado na estrutura principal do sistema e altere o nome para ".env".
+* Nas configurações do banco de dados, inclua as informações referentes ao banco que será utilizado, conforme indicado abaixo:
 
+      DB_CONNECTION=mysql <br>
+      DB_HOST=127.0.0.1<br>
+      DB_PORT=3306<br>
+      DB_DATABASE=xxxxxxxx
+      DB_USERNAME=xxxx
+      DB_PASSWORD=xxxx
+
+* Acesse o terminal e execute o seguinte comando na pasta principal do projeto:
+
+      php artisan migrate
+
+* Neste momento, o Artisan irá perguntar se deseja criar a base de dados; certifique-se de aceitar essa opção.
+* Agora, o banco de dados será criado automaticamente, e as migrações serão executadas automaticamente.
+* Além disso, execute o seguinte comando para executar a seed, que incluirá os dados do usuário admin na tabela de usuários.
+
+      php artisan db:seed
+
+* Agora, mais uma vez, através do terminal, na pasta principal do sistema, execute o seguinte comando para iniciar o servidor de teste:
+
+      php artisan serve 
+
+* Acesse o endereço local do servidor no seu navegador, conforme exibido no terminal.
+      
+      http://127.0.0.1:8000
+
+# Acesso
+
+* O usuário e senha padrão de teste são as seguintes:
+
+      Usuário: admin@teste.com.br
+      Senha: admin
+
+
+# Observação
+
+* Quando você rodar o sistema pela primeira vez no servidor, pode ser que ele solicite a geração de uma chave de acesso. Nesse momento, basta clicar no botão exibido na tela para gerar a chave e, em seguida, acesse novamente o endereço.
